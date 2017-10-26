@@ -2,9 +2,9 @@ import math
 import numpy as np
 
 def Mercator(data):
-    #data двумерный массив. строка это пара [E,N]
+    #data РјР°СЃСЃРёРІ С‚РѕС‡РµРє. РљР°Р¶РґР°СЏ СЃС‚СЂРѕРєР° СЌС‚Рѕ РїР°СЂР° [E,N] Рё РјРµРЅРЅРѕ РІ С‚Р°РєРѕРј РІРёРґРµ
     start_latitude = data[1]
-    phi = start_latitude*np.pi/180 #широта на которой катаемся
+    phi = start_latitude*np.pi/180 #start_latitude - С€РёСЂРѕС‚Р° СЃ РєРѕС‚РѕСЂРѕР№ РјС‹ РЅР°С‡РёРЅР°РµРј С‚СЂРµРє
     R_equator = 6378137.0
     s = cos(phi)
     R = R_equator * 1 * (0.99832407 + 0.00167644 * cos(2 * phi) - 0.00000352*cos(4 * phi))
