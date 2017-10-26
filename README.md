@@ -1,7 +1,3 @@
-# odometry_calibration
-Calibration of kinematical parameters of bicycle model based on gps tracks
-
-
 # Описание
 
 Практическая работа по восстановлению калибровки кинематической модели автомобиля xtrail по GPS трекам
