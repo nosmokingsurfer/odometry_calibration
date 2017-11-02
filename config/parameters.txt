@@ -1,2 +1,2 @@
-Расстояние между колесами автомобиля XTrail: 2.630 метра
-GPS датчик установлен на продольной оси симметрии кузова на расстоянии примерно 1,5 метра в сторону капота от середины задней оси
+distance betwee front and rear wheel axis of XTrail: 2.630 meters
+The GPS reciever was mounted 1.55 meters to the front from the middle point of the rear axis
