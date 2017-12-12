@@ -23,3 +23,6 @@ https://en.wikipedia.org/wiki/Mercator_projection
 - Построить на графике полученный набор точек (delta_mean, alpha), где delta_mean это среднее по окружности значение поворота руля delta
 - Построить интерполяцию набора точек полиномами разных степеней. Построить график зависимости угла alpha от delta_mean поверх точек эксперимента
 - Работа оформляется в виде jupyter notebook
+
+# Куда высылать решение
+Jupyter Notebook с решением высылать на почту panchenko@cognitive.ru
