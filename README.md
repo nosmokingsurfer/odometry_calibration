@@ -1,28 +1,28 @@
-# Описание
-
-Практическая работа по восстановлению калибровки кинематической модели автомобиля xtrail по GPS трекам
+# Description
+Vehicle's bicycle model calibration through the GPS tracks and known steering feedback.
 
 # data
-В этой папке лежат отписанные треки с навигационного устройства. В каждой папке вида new.датавремя.номер лежит один проезд в виде нескольких csv файлов. Внутри файлов лежат координаты точек траектории в градусах и значение положения руля для этой точки в условных единицах.
+This folder contains GPS calibration tracks. Each folder with name *new.DateTime.number* has one track in CSV format. The CSV files contains the East and Nord coordinates of the receiver and a corresponding steering wheel feedback value in degrees.
 
-Столбцы, соответственно: долгота (East), широта (Nord), положение руля (delta)
+Columns in the CSV files accordingly: *East*, *Nord* and *delta*.
 
 # scripts
-Здесь лежит скрипт для преобразования Меркатора - пересчет географических координат в градусах в координаты в метрах
-https://en.wikipedia.org/wiki/Mercator_projection
+Folder contains the Mercator transform python script - it transforms the degrees of East and Nord coordinates into the global meter reference frame. Please see the link https://en.wikipedia.org/wiki/Mercator_projection for more information.
 
 # config
-Здесь лежит текстовый фал с параметрами колесной базы авто и точки установки GPS датчика на машине
+The file *parameters.txt* contains the description of how the GPS receiver was mounted on the vehicle and vehicle's wheel base
 
-# Задачи которые нужно сделать
-- Выполнить преобразование Меркатора над координатами точек трека чтобы перегнать градусы в метры. Построить траектории в метровых координатах
-- Подготовить данные: выделить окружности фиксированного радиуса в массиве данных и отписать метровые точки для них в отдельные файлы
-- Имплементировать функцию МНК для окружностей, которая на входе принимает массив метровых точек (x, y), а на выходе выдает центр окружности и её радиус, а так же итоговую погрешность метода.
-- Получить для выделенных окружностей оценку параметров (x_c, y_c, R) вписанной окружности по МНК для каждого радиуса. Построить графики исходных точек и полученных окружностей
-- Из известных параметров кинематики автомобиля и положению GPS датчика на корпусе авто, по найденному радиусу R для каждой окружности получить угол поворота рулевых колес alpha в радианах для соответствующей велосипедной модели
-- Построить на графике полученный набор точек (delta_mean, alpha), где delta_mean это среднее по окружности значение поворота руля delta
-- Построить интерполяцию набора точек полиномами разных степеней. Построить график зависимости угла alpha от delta_mean поверх точек эксперимента
-- Работа оформляется в виде jupyter notebook
+# Project rubric
+* use the jupyter notebook to write the python script
+* plot the tracks after the Mercator transform
+* prepare the data: inside the tracks find the arcs with constant radius and put them into the separate array
+* implement an LSM method to fit the circles into the constant radius arcs
+- input: *(x, y)* - the coordinates of the points on the track
+- output: *(x_c, y_c, r)* - the center of the circle and the radius after the LSM
+* plot all the tracks and fitted circles
+* use the bicycle model and known wheel base of the vehicle to find the corresponding bicycle steering wheel angle *alpha* in radians
+* plot all the (*delta*,*alpha*) points
+* use polynomial interpolation method to find the relation between the *alpha* and *delta* in explicit way
 
-# Куда высылать решение
-Jupyter Notebook с решением высылать на почту panchenko@cognitive.ru
+# Submission
+Submit to the e-mail nosmokingsurfer@gmail.com or panchenko@cognitive.ru
